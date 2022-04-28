@@ -1,3 +1,4 @@
+import 'package:coffee_shop_v01/packages/screens/auth/components/header_auth.dart';
 import 'package:flutter/material.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -5,9 +6,14 @@ class SignInScreen extends StatelessWidget {
  static String routeName = "/sign_in";
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('sign in'),
+    return  Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: const[
+            //* auth 
+            HeaderAuth(),
+          ],
+        ),
       ),
     );
   }

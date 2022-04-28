@@ -15,7 +15,7 @@ class HeaderAuth extends StatelessWidget {
         //* arrow back
 
         //* logo
-        Image(image: PathImages.logo,)
+        
       ),
     );
   }
