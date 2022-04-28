@@ -3,7 +3,7 @@ import 'package:coffee_shop_v01/utils/path_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class PathSvg {
+class AppSvg {
   static final SvgPicture dTranslate = SvgPicture.asset(
     PathIcons.language,
     width: 25.w,

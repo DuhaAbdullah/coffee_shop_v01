@@ -5,8 +5,10 @@ class SignInScreen extends StatelessWidget {
  static String routeName = "/sign_in";
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return const Scaffold(
+      body: Center(
+        child: Text('sign in'),
+      ),
     );
   }
 }
