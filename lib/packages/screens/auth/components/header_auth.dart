@@ -1,22 +1,34 @@
-import 'package:coffee_shop_v01/utils/path_image.dart';
+import 'package:coffee_shop_v01/themes/app_colors.dart';
+import 'package:coffee_shop_v01/utils/path_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HeaderAuth extends StatelessWidget {
-  const HeaderAuth({Key? key ,  double height = 150}) : _height = height , super(key: key);
+  const HeaderAuth({Key? key, double height = 150})
+      : _height = height,
+        super(key: key);
 
   final double _height;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: _height,
-      margin: EdgeInsets.symmetric(vertical: 15.h),
-      child: Row(
-        //* arrow back
-
-        //* logo
-        
-      ),
+    return SafeArea(
+      child: Container(
+          height: _height,
+          margin: EdgeInsets.symmetric(vertical: 15.h),
+          child: Row(
+            children: [
+              //* arrow back
+              ModalRoute.of(context)?.canPop ?? false ?
+              BackButton(color: AppColors.bgGreenBold,) : Container(),
+              //* logo
+              Transform.scale(
+                scale: 2.w,
+                child: const Image(
+                  image: AssetImage(PathImages.logo),
+                ),
+              ),
+            ],
+          )),
     );
   }
 }

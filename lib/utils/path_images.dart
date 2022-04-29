@@ -1,4 +1,4 @@
-class PathImage {
+class PathImages {
   static const String logo = 'assets/logo/logo_app.png';
   static String coffeeCup = 'assets/images/coffee_cup.png';
   static String coffee1 = 'assets/images/coffee1.jpeg';

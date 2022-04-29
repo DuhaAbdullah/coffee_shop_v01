@@ -1,4 +1,5 @@
 import 'package:coffee_shop_v01/packages/screens/auth/components/header_auth.dart';
+import 'package:coffee_shop_v01/packages/screens/auth/view/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -9,9 +10,13 @@ class SignInScreen extends StatelessWidget {
     return  Scaffold(
       body: SingleChildScrollView(
         child: Column(
-          children: const[
+          children: [
             //* auth 
-            HeaderAuth(),
+            const HeaderAuth(),
+            //* test
+            ElevatedButton(
+              onPressed: (() => Navigator.pushNamed(context, SignUpScreen.routeName)), 
+              child: const Text('to go')), 
           ],
         ),
       ),

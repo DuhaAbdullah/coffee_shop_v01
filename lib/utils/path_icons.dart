@@ -5,13 +5,13 @@ class PathIcons {
   // Email
   static final FaIcon emailIcon = FaIcon(
     FontAwesomeIcons.envelope,
-    color: AppColors.bgBlack,
+    color: AppColors.bgDark,
   );
 
   // password
   static final FaIcon passIcon = FaIcon(
     FontAwesomeIcons.userLock,
-    color: AppColors.bgBlack,
+    color: AppColors.bgDark,
   );
 
   static final FaIcon eyeIcon = FaIcon(

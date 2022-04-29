@@ -48,7 +48,7 @@ class HeaderDrawer extends StatelessWidget {
           Divider(
             color: AppTheme.isDark(context)
                 ? AppColors.bgWhite
-                : AppColors.bgBlack.withOpacity(0.5),
+                : AppColors.darkLoading.withOpacity(0.5),
           ),
         ],
       ),

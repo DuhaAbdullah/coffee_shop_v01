@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../language/config/config_lang.dart';
 import '../../../../../language/generated/key_lang.dart';
-import '../../../../../utils/path_image.dart';
+import '../../../../../utils/path_images.dart';
 import '../../../button/outlined_btn.dart';
 import 'flag_lang.dart';
 
