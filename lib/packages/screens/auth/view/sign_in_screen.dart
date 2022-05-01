@@ -1,3 +1,4 @@
+import 'package:coffee_shop_v01/packages/components/text_field_form.dart/custom.field.dart';
 import 'package:coffee_shop_v01/packages/screens/auth/components/header_auth.dart';
 import 'package:coffee_shop_v01/packages/screens/auth/view/sign_up_screen.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,8 @@ class SignInScreen extends StatelessWidget {
             //* test
             ElevatedButton(
               onPressed: (() => Navigator.pushNamed(context, SignUpScreen.routeName)), 
-              child: const Text('to go')), 
+              child: const Text('to go')),
+              const CustomeField(),
           ],
         ),
       ),

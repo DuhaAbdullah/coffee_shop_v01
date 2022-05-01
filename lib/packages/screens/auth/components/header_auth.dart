@@ -16,10 +16,15 @@ class HeaderAuth extends StatelessWidget {
           height: _height,
           margin: EdgeInsets.symmetric(vertical: 15.h),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               //* arrow back
-              ModalRoute.of(context)?.canPop ?? false ?
-              BackButton(color: AppColors.bgGreenBold,) : Container(),
+              ModalRoute.of(context)?.canPop ?? false
+                  ? BackButton(
+                      color: AppColors.bgGreenBold,
+                    )
+                  : Container(),
+              const Spacer(),
               //* logo
               Transform.scale(
                 scale: 2.w,
@@ -27,6 +32,7 @@ class HeaderAuth extends StatelessWidget {
                   image: AssetImage(PathImages.logo),
                 ),
               ),
+               Spacer(flex: ModalRoute.of(context)?.canPop ?? false ? 2: 1,),
             ],
           )),
     );
