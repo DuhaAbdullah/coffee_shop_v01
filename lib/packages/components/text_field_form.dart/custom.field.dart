@@ -16,6 +16,9 @@ class CustomeField extends StatelessWidget {
     String? labelText,
     String? helperText,
     TextInputType? keyboardType,
+    String? Function(String?)? onValidator,
+    void Function(String?)? onSaved,
+    void Function(String)? onChanged,
   })  : _initValue = initValue,
         _cursorColor = cursorColor,
         _textInputType = keyboardType,
@@ -26,11 +29,17 @@ class CustomeField extends StatelessWidget {
         _label = label,
         _labelText = labelText,
         _helperText = helperText,
+        _onValidator = onValidator,
+        _onSaved = onSaved,
+        _onChanged = onChanged,
         super(key: key);
   final String? _initValue;
   final Color? _cursorColor;
   final TextInputType? _textInputType;
   final bool _obscureText;
+  final String? Function(String?)? _onValidator;
+  final void Function(String?)? _onSaved;
+  final void Function(String)? _onChanged;
   //* input decoration
   final String? _hint;
   final Widget? _pIcon;
@@ -45,6 +54,8 @@ class CustomeField extends StatelessWidget {
       cursorColor: _cursorColor,
       keyboardType: _textInputType,
       obscureText: _obscureText,
+      //validator will work when I tell her to work
+      validator: _onValidator,
       decoration: InputDecoration(
         border: InputBorder.none,
         hintText: _hint?.tr(),
@@ -58,10 +69,23 @@ class CustomeField extends StatelessWidget {
           borderSide: BorderSide(color: AppColors.bgGreen),
         ),
         focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(40.r),
-            borderSide: BorderSide(
-              color: AppColors.bgGreenBold,
-            )),
+          borderRadius: BorderRadius.circular(40.r),
+          borderSide: BorderSide(
+            color: AppColors.bgGreenBold,
+          ),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(40.r),
+          borderSide: BorderSide(
+            color: AppColors.ceriseRed,
+          ),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(40.r),
+          borderSide: BorderSide(
+            color: AppColors.ceriseRed,
+          ),
+        ),
       ),
     );
   }

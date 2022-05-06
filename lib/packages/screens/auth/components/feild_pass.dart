@@ -35,6 +35,11 @@ class _FieldPassState extends State<FieldPass> {
           onTap: () => _viewPass(),
         ),
       ),
+      onValidator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'error';
+        }
+      },
     );
   }
 

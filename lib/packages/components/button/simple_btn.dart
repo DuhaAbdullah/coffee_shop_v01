@@ -9,14 +9,17 @@ class SimpleBtn extends StatelessWidget {
     Key? key,
     required String title,
     required void Function() onTap,
-    double height = 120,
+    double height = 40, 
+    bool ltr =  true,
   })  : _title = title,
         _onTap = onTap,
         _height = height,
+        _ltr= ltr,
         super(key: key);
   final String _title;
   final double _height;
   final void Function() _onTap;
+  final bool _ltr;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -26,11 +29,16 @@ class SimpleBtn extends StatelessWidget {
         height: _height.h,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(100.r)
+          gradient: LinearGradient(
+            colors: AppColors.btnColor,
+            begin: _ltr ? Alignment.centerLeft : Alignment.centerRight,
+            end: _ltr ? Alignment.centerRight : Alignment.centerLeft,
+          ),
+          borderRadius: BorderRadius.circular(50.r),
         ),
         child: Text(
           _title.tr().toUpperCase(),
-          style: AppTheme.h5(context).copyWith(color: AppColors.bgWhite),
+          style: AppTheme.h6(context).copyWith(color: AppColors.bgWhite),
         ),
       ),
     );
