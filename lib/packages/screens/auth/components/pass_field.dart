@@ -1,3 +1,4 @@
+import 'package:coffee_shop_v01/services/validators/app_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -7,10 +8,13 @@ import '../../../../utils/path_icons.dart';
 import '../../../components/text_field_form.dart/custom.field.dart';
 
 class FieldPass extends StatefulWidget {
-  const FieldPass({Key? key}) : super(key: key);
+  const FieldPass({Key? key , 
+   required void Function(String? value)? valuePass,
+  }) : _valuePass = valuePass, super(key: key);
 
   @override
   State<FieldPass> createState() => _FieldPassState();
+  final Function(String? value)? _valuePass;
 }
 
 class _FieldPassState extends State<FieldPass> {
@@ -35,11 +39,8 @@ class _FieldPassState extends State<FieldPass> {
           onTap: () => _viewPass(),
         ),
       ),
-      onValidator: (value) {
-        if (value == null || value.isEmpty) {
-          return 'error';
-        }
-      },
+      onValidator: AppValidator.isPass,
+      onSaved: widget._valuePass,
     );
   }
 
