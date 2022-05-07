@@ -6,6 +6,8 @@ import 'package:coffee_shop_v01/packages/screens/auth/components/forget_pass_tex
 import 'package:coffee_shop_v01/packages/screens/auth/components/header_auth.dart';
 import 'package:coffee_shop_v01/packages/screens/auth/components/rich_text_auth.dart';
 import 'package:coffee_shop_v01/packages/screens/auth/model/user_auth.dart';
+import 'package:coffee_shop_v01/packages/screens/auth/view/sign_up_screen.dart';
+import 'package:coffee_shop_v01/packages/screens/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,7 +17,7 @@ class SignInScreen extends StatelessWidget {
   const SignInScreen({Key? key}) : super(key: key);
   static String routeName = "/sign_in";
   //* key
-  static GlobalKey<FormState> keyForm = GlobalKey<FormState>();
+  static final GlobalKey<FormState> _keyForm = GlobalKey<FormState>();
   // *  model save data
   static final ModelUserAuth _userAuth = ModelUserAuth();
   @override
@@ -23,7 +25,7 @@ class SignInScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Form(
-          key: keyForm,
+          key: _keyForm,
           child: Container(
             margin: EdgeInsets.symmetric(horizontal: 5.w),
             child: Column(
@@ -47,8 +49,8 @@ class SignInScreen extends StatelessWidget {
                     title: KeyLang.login,
                     ltr: false,
                     onTap: () {
-                      if (keyForm.currentState?.validate() ?? false) {
-                        keyForm.currentState?.save();
+                      if (_keyForm.currentState?.validate() ?? false) {
+                        _keyForm.currentState?.save();
                         print(_userAuth.toString());
                       }
                     }),
@@ -59,7 +61,7 @@ class SignInScreen extends StatelessWidget {
                 RichTextAuth(
                     fword: KeyLang.notAccount,
                     sword: KeyLang.register,
-                    onTap: () {}),
+                    onTap: () => _navRegister(context)),
               ],
             ),
           ),
@@ -67,4 +69,12 @@ class SignInScreen extends StatelessWidget {
       ),
     );
   }
+
+  // * navigator Register
+  void _navRegister(BuildContext context) =>
+      Navigator.pushNamed(context, SignUpScreen.routeName);
+
+  // * Navigator Home Page
+  void _navHome(BuildContext context) =>
+      Navigator.pushNamed(context, HomeScreen.routeName);
 }

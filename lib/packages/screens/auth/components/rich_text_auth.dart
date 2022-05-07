@@ -21,27 +21,27 @@ class RichTextAuth extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        style: DefaultTextStyle.of(context).style,
-        children: [
-          TextSpan(
-            text: _fword.tr(),
-            style: AppTheme.b1(context).copyWith(
-              color: AppTheme.isDark(context)
-                  ? AppColors.bgWhite
-                  : AppColors.bgDark,
-            ),
-          ),
-          TextSpan(
-              text: _sword.tr(),
-              style: AppTheme.h6(context).copyWith(
-                color: AppColors.bgGreenBold,
+    return GestureDetector(
+      child: RichText(
+        text: TextSpan(
+          style: DefaultTextStyle.of(context).style,
+          children: [
+            TextSpan(
+              text: _fword.tr(),
+              style: AppTheme.b1(context).copyWith(
+                color: AppTheme.isDark(context)
+                    ? AppColors.bgWhite
+                    : AppColors.bgDark,
               ),
-          
-              //recognizer: TapGestureRecognizer()..onTap = _onTap),
-          ),
-        ],
+            ),
+            TextSpan(
+                text: _sword.tr(),
+                style: AppTheme.h6(context).copyWith(
+                  color: AppColors.bgGreenBold,
+                ),
+                recognizer: TapGestureRecognizer()..onTap = _onTap),
+          ],
+        ),
       ),
     );
   }

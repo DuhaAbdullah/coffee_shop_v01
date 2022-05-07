@@ -1,3 +1,5 @@
+import 'package:coffee_shop_v01/packages/screens/auth/view/forgot_password_screen.dart';
+
 import '../../../../language/generated/key_lang.dart';
 import '../../../../services/language/language_status.dart';
 import '../../../../services/themes/theme_status.dart';
@@ -13,7 +15,7 @@ class ForgotPassText extends StatelessWidget {
       alignment:
           AppLang.isAr(context) ? Alignment.centerLeft : Alignment.centerRight,
       child: TextButton(
-        onPressed: () {},
+        onPressed: () => _navForgot(context),
         child: Text(
           KeyLang.forgotPass.tr(),
           style: AppTheme.b1(context)
@@ -24,6 +26,6 @@ class ForgotPassText extends StatelessWidget {
   }
 
   // * navigator Forgot
-  //void _navForgot(BuildContext context) =>
-     // Navigator.pushNamed(context, PageForgot.id);
+  void _navForgot(BuildContext context) =>
+     Navigator.pushNamed(context,ForgotPasswordScreen.routeName);
 }
