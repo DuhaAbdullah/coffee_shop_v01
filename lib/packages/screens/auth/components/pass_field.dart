@@ -9,7 +9,7 @@ import '../../../components/text_field_form.dart/custom.field.dart';
 class FieldPass extends StatefulWidget {
   const FieldPass({
     Key? key,
-    required void Function(String? value)? valuePass,
+    void Function(String? value)? valuePass,
     String? Function(String?)? onValidators = AppValidators.isPass,
     void Function(String)? onChanged,
     String hint = KeyLang.pass,

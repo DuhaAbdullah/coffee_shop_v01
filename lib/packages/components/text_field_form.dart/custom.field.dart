@@ -54,8 +54,9 @@ class CustomeField extends StatelessWidget {
       cursorColor: _cursorColor,
       keyboardType: _textInputType,
       obscureText: _obscureText,
-      //validator will work when I tell her to work
       validator: _onValidator,
+      onSaved: _onSaved,
+      onChanged: _onChanged,
       decoration: InputDecoration(
         border: InputBorder.none,
         hintText: _hint?.tr(),

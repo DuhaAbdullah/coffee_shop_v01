@@ -37,10 +37,7 @@ class SignUpScreen extends StatelessWidget {
               const SBH(),
               //* password
               FieldPass(
-                onValidators: (value) {
-                  return AppValidators.isPass(value);
-                },
-                valuePass: (value) => pass = value,
+                onChanged: (value) => pass = value,
               ),
               const SBH(),
               //* confirm password

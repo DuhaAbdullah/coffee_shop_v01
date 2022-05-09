@@ -9,10 +9,6 @@ class ModelUserAuth {
 
   setEmail(String? email) => this.email = email ?? '';
   setPass(String? password) => this.password = password ?? '';
-  SetEmail(String? email) {
-    this.email = email ?? ' ';
-    print(email);
-  }
 
   @override
   String toString() => 'ModelUserAuth(email: $email, password: $password )';
