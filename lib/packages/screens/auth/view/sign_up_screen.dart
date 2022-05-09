@@ -1,5 +1,6 @@
 import 'package:coffee_shop_v01/packages/screens/auth/model/user_auth.dart';
 import 'package:flutter/material.dart';
+import '../../../../services/validators/app_validators.dart';
 import '../components/header_auth.dart';
 import 'package:coffee_shop_v01/language/generated/key_lang.dart';
 import 'package:coffee_shop_v01/packages/components/button/simple_btn.dart';
@@ -18,6 +19,8 @@ class SignUpScreen extends StatelessWidget {
   static final GlobalKey<FormState> _keyForm = GlobalKey<FormState>();
   // *  model save data
   static final ModelUserAuth _userAuth = ModelUserAuth();
+  // * save pass
+  static String? pass;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,6 +37,17 @@ class SignUpScreen extends StatelessWidget {
               const SBH(),
               //* password
               FieldPass(
+                onValidators: (value) {
+                  return AppValidators.isPass(value);
+                },
+                valuePass: (value) => value,
+              ),
+              const SBH(),
+              //* confirm password
+              FieldPass(
+                hint: KeyLang.confirmPass,
+                onValidators: (value) =>
+                     AppValidators.isEqualPass(value, pass ?? ''),
                 valuePass: _userAuth.setPass,
               ),
               const SBH(),

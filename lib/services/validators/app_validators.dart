@@ -2,7 +2,7 @@ import '../../language/generated/key_lang.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:validators/validators.dart' as validators;
 
-class AppValidator {
+class AppValidators {
   // * message
   static final _messageEnterValue = KeyLang.enterValue.tr();
   static final _messageCorrectEmail = KeyLang.errorEmail.tr();

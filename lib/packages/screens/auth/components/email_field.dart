@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../language/generated/key_lang.dart';
-import '../../../../services/validators/app_validator.dart';
+import '../../../../services/validators/app_validators.dart';
 import '../../../../utils/path_icons.dart';
 import '../../../components/text_field_form.dart/custom.field.dart';
 
@@ -22,7 +22,7 @@ class EmailField extends StatelessWidget {
         padding: EdgeInsets.all(10.h),
         child: PathIcons.emailIcon,
       ),
-      onValidator: AppValidator.isEmail,
+      onValidator: AppValidators.isEmail,
       onSaved: _valueEmail,
     );
   }
