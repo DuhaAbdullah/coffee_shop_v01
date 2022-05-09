@@ -11,6 +11,7 @@ class AppValidators {
 
   // * Email
   static String? isEmail(String? value) {
+    print(' value : $value');
     final String? valueTrim = value?.trim();
     if (valueTrim?.isEmpty ?? true) {
       return _messageEnterValue;
@@ -22,6 +23,7 @@ class AppValidators {
 
   // * pass
   static String? isPass(String? value) {
+    print(' value : $value');
     final String? valueTrim = value?.trim();
     if (valueTrim?.isEmpty ?? true) {
       return _messageEnterValue;
@@ -33,6 +35,7 @@ class AppValidators {
 
   // * equal Pass
   static String? isEqualPass(String? value, String pass) {
+    print('pass : $pass , value : $value');
     final String? valueTrim = value?.trim();
     if (valueTrim?.isEmpty ?? true) {
       return _messageEnterValue;

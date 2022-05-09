@@ -35,7 +35,7 @@ class _FieldPassState extends State<FieldPass> {
   Widget build(BuildContext context) {
     return CustomeField(
       hint: widget._hint,
-      obscureText: true,
+      obscureText: _obscureText,
       pIcon: Padding(
         padding: EdgeInsets.all(10.h),
         child: PathIcons.passIcon,

@@ -27,47 +27,50 @@ class SignUpScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.symmetric(horizontal: 5.w),
-          child: Column(
-            children: [
-              //* auth
-              const HeaderAuth(),
-              const SBH(),
-              //* email
-              EmailField(valueEmail: _userAuth.setEmail),
-              const SBH(),
-              //* password
-              FieldPass(
-                onChanged: (value) => pass = value,
-              ),
-              const SBH(),
-              //* confirm password
-              FieldPass(
-                hint: KeyLang.confirmPass,
-                onValidators: (value) {
-                  return AppValidators.isEqualPass(value, pass ?? '');
-                },
-                valuePass: _userAuth.setPass,
-              ),
-              const SBH(),
-              //* button
-              SimpleBtn(
-                  title: KeyLang.register,
-                  ltr: false,
-                  onTap: () {
-                    if (_keyForm.currentState?.validate() ?? false) {
-                      _keyForm.currentState?.save();
-                      print(_userAuth.toString());
-                    }
-                  }),
-              const SBH(
-                h: 20,
-              ),
-              //*  have an account
-              RichTextAuth(
-                  fword: KeyLang.haveAccount,
-                  sword: KeyLang.login,
-                  onTap: () => Navigator.pop(context)),
-            ],
+          child: Form(
+            key: _keyForm,
+            child: Column(
+              children: [
+                //* auth
+                const HeaderAuth(),
+                const SBH(),
+                //* email
+                EmailField(valueEmail: _userAuth.setEmail),
+                const SBH(),
+                //* password
+                FieldPass(
+                  onChanged: (value) => pass = value,
+                ),
+                const SBH(),
+                //* confirm password
+                FieldPass(
+                  hint: KeyLang.confirmPass,
+                  onValidators: (value) {
+                    return AppValidators.isEqualPass(value, pass ?? '');
+                  },
+                  valuePass: _userAuth.setPass,
+                ),
+                const SBH(),
+                //* button
+                SimpleBtn(
+                    title: KeyLang.register,
+                    ltr: false,
+                    onTap: () {
+                      if (_keyForm.currentState?.validate() ?? false) {
+                        _keyForm.currentState?.save();
+                        print(_userAuth.toString());
+                      }
+                    }),
+                const SBH(
+                  h: 20,
+                ),
+                //*  have an account
+                RichTextAuth(
+                    fword: KeyLang.haveAccount,
+                    sword: KeyLang.login,
+                    onTap: () => Navigator.pop(context)),
+              ],
+            ),
           ),
         ),
       ),
