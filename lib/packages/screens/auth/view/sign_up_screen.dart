@@ -40,20 +40,21 @@ class SignUpScreen extends StatelessWidget {
                 onValidators: (value) {
                   return AppValidators.isPass(value);
                 },
-                valuePass: (value) => value,
+                valuePass: (value) => pass = value,
               ),
               const SBH(),
               //* confirm password
               FieldPass(
                 hint: KeyLang.confirmPass,
-                onValidators: (value) =>
-                     AppValidators.isEqualPass(value, pass ?? ''),
+                onValidators: (value) {
+                  return AppValidators.isEqualPass(value, pass ?? '');
+                },
                 valuePass: _userAuth.setPass,
               ),
               const SBH(),
               //* button
               SimpleBtn(
-                  title: KeyLang.login,
+                  title: KeyLang.register,
                   ltr: false,
                   onTap: () {
                     if (_keyForm.currentState?.validate() ?? false) {
