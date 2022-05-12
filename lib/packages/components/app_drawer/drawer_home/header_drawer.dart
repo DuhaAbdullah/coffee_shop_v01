@@ -28,13 +28,13 @@ class HeaderDrawer extends StatelessWidget {
                   children: [
                     // * name
                     Text(
-                      'MOhamed Elsayed',
+                      'Doha',
                       style: GoogleFonts.pacifico(),
                     ),
                     SizedBox(height: 8.h),
                     // * email
                     const Text(
-                      'mohamed@gmail.com',
+                      'doha@gmail.com',
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),

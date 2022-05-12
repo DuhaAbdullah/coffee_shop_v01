@@ -1,4 +1,4 @@
-import 'package:coffee_shop_v01/packages/screens/auth/view/sign_in_screen.dart';
+import 'package:coffee_shop_v01/packages/screens/splash/views/body.dart';
 import 'package:coffee_shop_v01/services/restart_app/app_restart.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
                 .localizationDelegates, //context means to know the element place in the tree
             supportedLocales: context.supportedLocales,
             locale: context.locale,
-            initialRoute: SignInScreen.routeName,
+            initialRoute: SplashScreen.routeName,
             routes: AppRoute.route,
           );
         }),
