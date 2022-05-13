@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../language/generated/key_lang.dart';
 
 class AppTheme {
@@ -49,4 +49,19 @@ class AppTheme {
   static double sw(BuildContext context) => MediaQuery.of(context).size.width;
   // * screen height
   static double sh(BuildContext context) => MediaQuery.of(context).size.height;
+    //  * Change Theme
+  static const String _keyTheme = 'Key_Theme';
+
+  // * set
+  static Future<void> setTheme({required bool value}) async {
+    final SharedPreferences _sharedPref = await SharedPreferences.getInstance();
+    await _sharedPref.setBool(_keyTheme, value);
+  }
+
+  // * get
+  static Future<bool> get getTheme async {
+    final SharedPreferences _sharedPref = await SharedPreferences.getInstance();
+    final bool? _theme = _sharedPref.getBool(_keyTheme);
+    return _theme ?? false;
+  }
 }

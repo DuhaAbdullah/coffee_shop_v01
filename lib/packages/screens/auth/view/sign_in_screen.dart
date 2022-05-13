@@ -7,10 +7,8 @@ import 'package:coffee_shop_v01/packages/screens/auth/components/header_auth.dar
 import 'package:coffee_shop_v01/packages/screens/auth/components/rich_text_auth.dart';
 import 'package:coffee_shop_v01/packages/screens/auth/model/user_auth.dart';
 import 'package:coffee_shop_v01/packages/screens/auth/view/sign_up_screen.dart';
-import 'package:coffee_shop_v01/packages/screens/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../components/pass_field.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -73,8 +71,4 @@ class SignInScreen extends StatelessWidget {
   // * navigator Register
   void _navRegister(BuildContext context) =>
       Navigator.pushNamed(context, SignUpScreen.routeName);
-
-  // * Navigator Home Page
-  void _navHome(BuildContext context) =>
-      Navigator.pushNamed(context, HomeScreen.routeName);
 }
