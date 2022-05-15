@@ -30,7 +30,7 @@ class FlagDrawer extends StatelessWidget {
             Navigator.pop(context);
           } else {
             EasyLocalization.of(context)?.setLocale(_lang);
-            RestartApp.restartApp(context);
+            RestartApp.reBuildApp(context);
           }
         },
         child: Column(

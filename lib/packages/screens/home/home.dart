@@ -1,8 +1,7 @@
 
 import 'package:flutter/material.dart';
-
-import '../../components/app-bar/appbar_simple.dart';
-import '../../components/app_drawer/drawer_home/body_drawer.dart';
+import '../../components/app-bar/main_appbar.dart';
+import 'components/drawer_custom/body_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String id = 'PageHome';
@@ -11,8 +10,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: AppBarSimple(title: 'Home'),
-      drawer: BodyDrawer(),
+      // * AppBar Main
+      appBar: MainAppBar(),
+      // * Drawer
+      drawer: DrawerBody(),
       body: Center(
         child: Text('Home '),
       ),
