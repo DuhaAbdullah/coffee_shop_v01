@@ -1,3 +1,4 @@
+import 'package:coffee_shop_v01/packages/screens/home/views/order.dart';
 import 'package:flutter/material.dart';
 
 import '../packages/screens/auth/view/forgot_password_screen.dart';
@@ -13,5 +14,6 @@ class AppRoute {
     SignUpScreen.routeName: (context) => const SignUpScreen(),
     HomeScreen.routeName: (context) => const HomeScreen(),
     ForgotPasswordScreen.routeName: (context) => const  ForgotPasswordScreen(),
+    OrderScreen.routeName: (context) => const OrderScreen(),
   };
 }

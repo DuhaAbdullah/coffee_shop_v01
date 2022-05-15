@@ -13,7 +13,7 @@ class ChangeTheme extends ChangeNotifier {
 
   void updateThemeShared() async {
     if (isDark != await AppTheme.getTheme) {
-      isDark = await AppTheme.getTheme;
+      isDark = true;
       notifyListeners();
     }
   }

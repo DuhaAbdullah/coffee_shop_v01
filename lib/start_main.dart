@@ -5,6 +5,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'packages/screens/home/components/manage_state/coffee.dart';
 import 'routes/app_route.dart';
 
 class MyApp extends StatelessWidget {
@@ -16,10 +17,11 @@ class MyApp extends StatelessWidget {
       child: MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (context) => ChangeTheme()),
+          ChangeNotifierProvider(create: (context) => ManageStateCoffee()),
         ],
         child: Builder(builder: (context) {
           final ChangeTheme _themeProvider = Provider.of<ChangeTheme>(context);
-            _themeProvider.updateThemeShared();
+          _themeProvider.updateThemeShared();
           return ScreenUtilInit(
               designSize: const Size(360, 690),
               minTextAdapt: true,

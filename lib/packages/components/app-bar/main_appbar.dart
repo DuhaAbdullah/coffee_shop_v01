@@ -1,4 +1,4 @@
-import 'package:coffee_shop_v01/themes/app_colors.dart';
+
 import 'package:coffee_shop_v01/utils/path_images.dart';
 import '../../../language/generated/key_lang.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +15,6 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: Text(_title.tr()),
       centerTitle: true,
-      backgroundColor: AppColors.bgWhite,
       actions: [
         Transform.scale(
           scale: 2,
