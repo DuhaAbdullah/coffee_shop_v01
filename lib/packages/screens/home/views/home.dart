@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
-import '../../components/app-bar/main_appbar.dart';
-import 'components/drawer_custom/body_drawer.dart';
-import 'components/floating_button_home.dart';
+import '../../../components/app-bar/main_appbar.dart';
+import '../components/drawer_custom/body_drawer.dart';
+import '../components/floating_button_home.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String id = 'PageHome';

@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:coffee_shop_v01/packages/screens/home/home.dart';
+import 'package:coffee_shop_v01/packages/screens/home/views/home.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
