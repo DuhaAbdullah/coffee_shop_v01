@@ -1,6 +1,5 @@
 import 'package:coffee_shop_v01/packages/screens/auth/view/sign_in_screen.dart';
 import 'package:coffee_shop_v01/packages/screens/home/components/manage_state/ingredients.dart';
-import 'package:coffee_shop_v01/packages/screens/home/views/home.dart';
 import 'package:coffee_shop_v01/services/restart_app/app_restart.dart';
 import 'package:coffee_shop_v01/services/themes/change_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -43,7 +42,7 @@ class MyApp extends StatelessWidget {
                       .localizationDelegates, //context means to know the element place in the tree
                   supportedLocales: context.supportedLocales,
                   locale: context.locale,
-                  initialRoute: HomeScreen.routeName,
+                  initialRoute: SignInScreen.routeName,
                   routes: AppRoute.route,
                 );
               });
